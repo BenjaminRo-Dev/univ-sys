@@ -1,12 +1,16 @@
 <div class="card p-3">
     <h2>Usuarios</h2>
     <div class="text-end">
+        <button (click)="exportarExcel()"
+            class="m-2 btn btn-secondary" routerLink="create">
+            Exportar Excel
+        </button>
         <button class="btn btn-primary" routerLink="create">
             Crear
         </button>
     </div>
     <div class="card-body table-responsive">
-        <table class="table table-hover">
+        <table class="table table-hover" id="tabla-usuarios">
             <thead>
                 <tr>
                     <th>ID</th>
