@@ -1,0 +1,26 @@
+<div class="card p-3">
+    <h2>Registrar nuevo usuario</h2>
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre *</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo *</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña *</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="mb-3">
+                <label for="role" class="form-label">Rol *</label>
+                <select class="form-select" id="role" name="role">
+                    <option value="admin">Administrativo</option>
+                    <option value="teacher">Docente</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+</div>

@@ -1,5 +1,5 @@
 <div class="card p-3">
-    <h2>Usuarios</h2>
+    <h2>Facultades</h2>
     <div class="text-end">
         <button class="btn btn-primary" routerLink="create">
             Crear
@@ -11,18 +11,14 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Rol</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                @for(usuario of usuarios; track usuario.id){
+                @for(facultad of facultades; track facultad.id){
                     <tr>
-                        <td>{{usuario.id}}</td>
-                        <td>{{usuario.name}}</td>
-                        <td>{{usuario.email}}</td>
-                        <td>Docente</td> <!-- TODO: Cambiar por el rol del usuario -->
+                        <td>{{facultad.id}}</td>
+                        <td>{{facultad.nombre}}</td>
                         <td>
                             <!-- TODO: Agregar botones de editar y eliminar -->
                             <button class="btn btn-warning m-1">
