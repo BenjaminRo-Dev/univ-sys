@@ -22,7 +22,8 @@ export class UserService {
   }
 
   getUserById(id: number) {
-    return this.http.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+    // return this.http.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+    return this.http.get(`${this.apiUrl}user/${id}`);
   }
 
   createUser(user: any) {

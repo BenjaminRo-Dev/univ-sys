@@ -29,9 +29,9 @@
                         <td>{{usuario.rol}}</td>
                         <td>
                             <!-- TODO: Agregar botones de editar y eliminar -->
-                            <button class="btn btn-info m-1">
+                            <button [routerLink]="['/administrativo/usuarios/', usuario.id]" class="btn btn-info m-1">
                                 Ver
-                            </button>
+                              </button>
                             <button class="btn btn-warning m-1">
                                 Editar
                             </button>

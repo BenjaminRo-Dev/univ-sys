@@ -11,6 +11,7 @@ import { CarrerasIndexComponent } from './carreras/carreras-index/carreras-index
 import { CarrerasCreateComponent } from './carreras/carreras-create/carreras-create.component';
 import { ModulosShowComponent } from './modulos/modulos-show/modulos-show.component';
 import { CarrerasShowComponent } from './carreras/carreras-show/carreras-show.component';
+import { PerfilComponent } from '../auth/perfil/perfil.component';
 
 export const ADMIN_ROUTES: Routes = [
     {
@@ -27,7 +28,7 @@ export const ADMIN_ROUTES: Routes = [
             { path: 'carreras/create', component: CarrerasCreateComponent},
 
             { path: 'usuarios', component: UsuariosIndexComponent},
-            // { path: 'usuarios/:id', component: UsuariosIndexComponent},
+            { path: 'usuarios/:id', component: PerfilComponent},
             { path: 'usuarios/create', component: UsuariosCreateComponent},
 
             { path: 'facultades', component: FacultadesIndexComponent},

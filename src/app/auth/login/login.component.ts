@@ -31,8 +31,8 @@ export class LoginComponent {
     request.subscribe({
       next: (response: any) => {
         // this.errors = [];
+        localStorage.setItem('user', JSON.stringify(response));
         if(response.rol == 'ADMIN') {
-          console.log('Administrador');
           this.router.navigate(['/administrativo']);
         }else if(response.rol == 'USER') {
           console.log('Usuario');
