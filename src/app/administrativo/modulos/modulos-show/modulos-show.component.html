@@ -1,5 +1,5 @@
 <div class="card p-3">
-    <h2>Carreras</h2>
+    <h2>Aulas del módulo {{ nroModulo }}</h2>
     <div class="text-end">
         <button class="btn btn-primary" routerLink="create">
             Crear
@@ -9,25 +9,19 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Sigla</th>
+                    <!-- <th>ID</th> -->
+                    <th>Número</th>
+                    <th>Capacidad</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                @for(carrera of carreras; track carrera.id){
+                @for(aula of aulas; track aula.id){
                     <tr>
-                        <td>{{carrera.id}}</td>
-                        <td>{{carrera.name}}</td>
-                        <td>{{carrera.sigla}}</td>
+                        <!-- <td>{{aula.id}}</td> -->
+                        <td>{{aula.numero}}</td>
+                        <td>{{aula.capacidad}}</td>
                         <td>
-                            <button [routerLink]="['/administrativo/carreras', carrera.sigla]" class="btn btn-info m-1">
-                                Ver aulas
-                            </button>
-                            <button class="btn btn-warning m-1">
-                                Editar
-                            </button>
                             <button class="btn btn-danger">
                                 Eliminar
                             </button>

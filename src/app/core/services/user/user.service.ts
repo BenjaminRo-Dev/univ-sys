@@ -1,16 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private http = inject(HttpClient);
+  private apiUrl = environment.apiBaseUrl;
 
   constructor() { }
 
+  // login tipo post:
+  login(user: any) {
+    return this.http.post(`${this.apiUrl}user/login`, user);
+  }
+
   getUsers() {
-    return this.http.get('https://jsonplaceholder.typicode.com/users');
+    // return this.http.get('https://jsonplaceholder.typicode.com/users');
+    return this.http.get(`${this.apiUrl}user`);
   }
 
   getUserById(id: number) {

@@ -18,9 +18,9 @@ export class UsuariosIndexComponent {
   ngOnInit(): void {
     this.userService.getUsers()
       .subscribe((response: any) => {
-        this.usuarios = response;
+        this.usuarios = response.data;
+        // console.log(this.usuarios);
       });
-    
   }
 
   fileName = 'Usuarios.xlsx';

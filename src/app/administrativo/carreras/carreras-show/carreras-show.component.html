@@ -1,32 +1,29 @@
 <div class="card p-3">
-    <h2>Carreras</h2>
+    <h2>Materias de la carrera {{ carrera.name }} {{ carrera.sigla }}</h2>
     <div class="text-end">
-        <button class="btn btn-primary" routerLink="create">
+        <!-- <button class="btn btn-primary" routerLink="create">
             Crear
-        </button>
+        </button> -->
     </div>
     <div class="card-body table-responsive">
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Nombre</th>
+                    <th>Nivel</th>
                     <th>Sigla</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                @for(carrera of carreras; track carrera.id){
+                @for(materia of materias; track materia.id){
                     <tr>
-                        <td>{{carrera.id}}</td>
-                        <td>{{carrera.name}}</td>
-                        <td>{{carrera.sigla}}</td>
+                        <td>{{materia.materia.name}}</td>
+                        <td>{{ materia.nivel }}</td>
+                        <td>{{materia.materia.sigla}}</td>
                         <td>
-                            <button [routerLink]="['/administrativo/carreras', carrera.sigla]" class="btn btn-info m-1">
-                                Ver aulas
-                            </button>
-                            <button class="btn btn-warning m-1">
-                                Editar
+                            <button class="btn btn-info m-1">
+                                Ver
                             </button>
                             <button class="btn btn-danger">
                                 Eliminar

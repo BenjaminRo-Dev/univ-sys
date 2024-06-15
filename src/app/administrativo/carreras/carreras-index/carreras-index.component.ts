@@ -17,7 +17,8 @@ export class CarrerasIndexComponent {
   ngOnInit(): void {
     this.carreraService.getCarreras()
       .subscribe((response: any) => {
-        this.carreras = response;
+        this.carreras = response.data;
+        // console.log(this.carreras);
       });
   }
 

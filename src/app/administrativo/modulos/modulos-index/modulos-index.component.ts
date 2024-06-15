@@ -18,7 +18,7 @@ export class ModulosIndexComponent {
   ngOnInit(): void {
     this.moduloService.getModulos()
       .subscribe((response: any) => {
-        this.modulos = response;
+        this.modulos = response.data;
       });
     
   }

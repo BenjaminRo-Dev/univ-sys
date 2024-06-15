@@ -4,13 +4,30 @@
             <img src="assets/uagrm.png" alt="UnivSys" class="col-md-2 col-sm-2 rounded mx-auto d-block">
             <h1 class="text-center">Iniciar Sesión - UnivSys</h1>
             <p class="text-center">Ingresa tus datos para iniciar sesión</p>
-            <label>Correo *</label>
-            <input type="email" class="form-control">
-            <label>Contraseña *</label>
-            <input type="password" class="form-control">
-            <button class="mt-2 btn btn-primary">
-                Iniciar Sesión
-            </button>
+
+            <div class="row justify-content-center" >
+                @if (hayError) {
+                    <div class="alert alert-danger" >
+                        <ul>
+                            Contraseña o correo incorrectos.
+                        </ul>
+                    </div>
+                }
+            </div>
+
+            <form [formGroup]="form" (ngSubmit)="login()">
+
+
+
+                <label>Correo *</label>
+                <input formControlName="email" id="email" type="email" class="form-control">
+                <label>Contraseña *</label>
+                <input formControlName="password" id="password" type="password" class="form-control">
+                <button class="mt-2 btn btn-primary">
+                    Iniciar Sesión
+                </button>
+            </form>
+
         </div>
     </div>
 </div>

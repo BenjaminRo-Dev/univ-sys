@@ -17,7 +17,7 @@ export class FacultadesIndexComponent {
   ngOnInit(): void {
     this.facultadService.getFacultades()
       .subscribe((response: any) => {
-        this.facultades = response;
+        this.facultades = response.data;
       });
     
   }

@@ -24,11 +24,14 @@
                 @for(usuario of usuarios; track usuario.id){
                     <tr>
                         <td>{{usuario.id}}</td>
-                        <td>{{usuario.name}}</td>
+                        <td>{{usuario.username}}</td>
                         <td>{{usuario.email}}</td>
-                        <td>Docente</td> <!-- TODO: Cambiar por el rol del usuario -->
+                        <td>{{usuario.rol}}</td>
                         <td>
                             <!-- TODO: Agregar botones de editar y eliminar -->
+                            <button class="btn btn-info m-1">
+                                Ver
+                            </button>
                             <button class="btn btn-warning m-1">
                                 Editar
                             </button>
