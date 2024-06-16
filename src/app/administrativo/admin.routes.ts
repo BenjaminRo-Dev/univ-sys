@@ -23,13 +23,13 @@ export const ADMIN_ROUTES: Routes = [
             { path: 'dashboard', component: DashboardComponent},
 
             { path: 'modulos', component: ModulosIndexComponent },
-            { path: 'modulos/:id', component: ModulosShowComponent},
             { path: 'modulos/create', component: ModulosCreateComponent },
+            { path: 'modulos/:id', component: ModulosShowComponent},
             { path: 'aula/:id', component: AulaShowComponent},
 
             { path: 'carreras', component: CarrerasIndexComponent},
-            { path: 'carreras/:sigla', component: CarrerasShowComponent},
             { path: 'carreras/create', component: CarrerasCreateComponent},
+            { path: 'carreras/:sigla', component: CarrerasShowComponent},
 
             { path: 'usuarios', component: UsuariosIndexComponent},
             { path: 'usuarios/:id', component: PerfilComponent},
