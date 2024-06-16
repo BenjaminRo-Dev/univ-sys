@@ -1,0 +1,36 @@
+<div class="card p-3">
+    <h2>Aula {{ nroModulo}} - {{ nroAula }}</h2>
+    <div class="text-end">
+        <button class="btn btn-primary" routerLink="create">
+            Crear
+        </button>
+    </div>
+
+    <p>Capacidad: {{ aula.capacidad }}</p>
+
+    <h3>Horarios:</h3>
+    <div class="card-body table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Dia</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Final</th>
+                    <th>Grupo asignado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(horario of horarios; track horario.id){
+                    <tr>
+                        <td>{{horario.dia}}</td>
+                        <td>{{horario.inicio}}</td>
+                        <td>{{horario.fin}}</td>
+                        <td>{{horario.grupo ? horario.grupo.nombre : 'Libre'}} - {{horario.grupo ? horario.grupo.materia.name : ''}}</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

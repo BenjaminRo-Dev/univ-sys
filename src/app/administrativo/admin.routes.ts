@@ -14,6 +14,7 @@ import { CarrerasShowComponent } from './carreras/carreras-show/carreras-show.co
 import { PerfilComponent } from '../auth/perfil/perfil.component';
 import { GruposIndexComponent } from './grupos/grupos-index/grupos-index.component';
 import { GruposCreateComponent } from './grupos/grupos-create/grupos-create.component';
+import { AulaShowComponent } from './modulos/aula-show/aula-show.component';
 
 export const ADMIN_ROUTES: Routes = [
     {
@@ -24,6 +25,7 @@ export const ADMIN_ROUTES: Routes = [
             { path: 'modulos', component: ModulosIndexComponent },
             { path: 'modulos/:id', component: ModulosShowComponent},
             { path: 'modulos/create', component: ModulosCreateComponent },
+            { path: 'aula/:id', component: AulaShowComponent},
 
             { path: 'carreras', component: CarrerasIndexComponent},
             { path: 'carreras/:sigla', component: CarrerasShowComponent},

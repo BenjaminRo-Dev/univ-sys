@@ -19,6 +19,10 @@ export class ModuloService {
     return this.http.get(`${this.apiUrl}modulo/${id}`);
   }
 
+  getAula(id: number) {
+    return this.http.get(`${this.apiUrl}aula/${id}`);
+  }
+
   // getModuloById(id: number) {
   //   return this.http.get(`https://jsonplaceholder.typicode.com/modulos/${id}`);
   // }

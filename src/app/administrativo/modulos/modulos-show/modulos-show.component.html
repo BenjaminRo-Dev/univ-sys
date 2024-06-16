@@ -22,8 +22,8 @@
                         <td>{{aula.numero}}</td>
                         <td>{{aula.capacidad}}</td>
                         <td>
-                            <button class="btn btn-danger">
-                                Eliminar
+                            <button [routerLink]="['/administrativo/aula', aula.id]" class="btn btn-info m-1">
+                                Ver programación
                             </button>
                         </td>
                     </tr>
