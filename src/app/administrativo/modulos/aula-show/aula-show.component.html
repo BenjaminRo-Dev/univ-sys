@@ -26,8 +26,17 @@
                         <td>{{horario.dia}}</td>
                         <td>{{horario.inicio}}</td>
                         <td>{{horario.fin}}</td>
-                        <td>{{horario.grupo ? horario.grupo.nombre : 'Libre'}} - {{horario.grupo ? horario.grupo.materia.name : ''}}</td>
-                        
+                        <!-- <td>{{horario.grupo ? horario.grupo.nombre : 'Libre'}} - {{horario.grupo ? horario.grupo.materia.name : ''}}</td> -->
+                        <td>
+                            @if (horario.grupo) {
+                                {{ horario.grupo.nombre + ' - ' + horario.grupo.materia.name }}
+                            } @else{
+                                <button class="btn btn-primary">
+                                    Asignar
+                                </button>
+                            }
+                            
+                        </td>
                     </tr>
                 }
             </tbody>
