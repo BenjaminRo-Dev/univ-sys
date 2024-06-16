@@ -1,0 +1,47 @@
+<div class="card p-3">
+    <h2>Grupos</h2>
+    <div class="text-end">
+        <button class="btn btn-primary" routerLink="create">
+            Crear
+        </button>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Periodo</th>
+                    <th>Materia</th>
+                    <th>Docente</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(grupo of grupos; track grupo.id){
+                    <tr>
+                        <td>{{grupo.id}}</td>
+                        <td>{{grupo.nombre}}</td>
+                        <td>{{grupo.periodo}}</td>
+                        <td>{{grupo.materia.name}}</td>
+                        <td>{{grupo.user.username}}</td>
+
+                        <td>
+
+                            <!-- <button [routerLink]="['/administrativo/modulos', modulo.id]" class="btn btn-info m-1">
+                                Ver aulas
+                            </button> -->
+
+                            <button class="btn btn-info m-1">
+                                Aula
+                            </button>
+                            
+
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

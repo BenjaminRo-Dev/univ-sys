@@ -1,0 +1,45 @@
+<div class="container p-5">
+    <div class="card p-5">
+        <div class="card-body row justify-content-md-center">
+            <h1 class="text-center">Registrar nuevo grupo</h1>
+
+            <div class="row justify-content-center" >
+                @if (hayError) {
+                    <div class="alert alert-danger" >
+                        <ul>
+                            Error en los campos, revise e intentelo de nuevo.
+                        </ul>
+                    </div>
+                }
+            </div>
+
+            <form [formGroup]="form" (ngSubmit)="create()">
+
+                <label>Nombre *</label>
+                <input formControlName="nombre" id="nombre" type="text" class="form-control" placeholder="EJ: NW">
+                <label>Periodo *</label>
+                <input formControlName="periodo" id="periodo" type="periodo" class="form-control" placeholder="EJ: 1-2021">
+
+                <label>Selecciona un docente *</label>
+                <select id="usuario" formControlName="user" class="form-select">
+                    @for (docente of usuariosDocentes; track docente.id) {
+                        <option value="{{docente.id}}">{{docente.username}}</option>
+                    }
+                </select>
+
+                <label>Selecciona una materia *</label>
+                <select id="materia" formControlName="materia" class="form-select">
+                    @for (materia of materias; track materia.id) {
+                        <option value="{{materia.id}}">{{materia.name}}</option>
+                    }
+                </select>
+
+                <button class="mt-2 btn btn-primary">
+                    Guardar
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -12,6 +12,8 @@ import { CarrerasCreateComponent } from './carreras/carreras-create/carreras-cre
 import { ModulosShowComponent } from './modulos/modulos-show/modulos-show.component';
 import { CarrerasShowComponent } from './carreras/carreras-show/carreras-show.component';
 import { PerfilComponent } from '../auth/perfil/perfil.component';
+import { GruposIndexComponent } from './grupos/grupos-index/grupos-index.component';
+import { GruposCreateComponent } from './grupos/grupos-create/grupos-create.component';
 
 export const ADMIN_ROUTES: Routes = [
     {
@@ -34,6 +36,10 @@ export const ADMIN_ROUTES: Routes = [
             { path: 'facultades', component: FacultadesIndexComponent},
             // { path: 'facultades/:id', component: FacultadesIndexComponent},
             { path: 'facultades/create', component: FacultadesCreateComponent},
+
+            { path: 'grupos', component: GruposIndexComponent},
+            { path: 'grupos/create', component: GruposCreateComponent},
+            
             
         ]
     }
