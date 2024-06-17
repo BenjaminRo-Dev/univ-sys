@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { GrupoService } from '../../../core/services/grupo/grupo.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { NotificationService } from '../../../core/services/notification/notification.service';
 
 @Component({
   selector: 'app-grupo-horario-form',
@@ -11,12 +12,14 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 })
 export class GrupoHorarioFormComponent {
 
+  private notificationService = inject(NotificationService);
   private grupoService = inject(GrupoService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
   grupos: any[] = [];
   public horarioId: number = 0;
+  
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('horarioId');
@@ -49,6 +52,7 @@ export class GrupoHorarioFormComponent {
         console.log(response);
         console.log('Horario y aula asignado'); 
         this.router.navigate(['/administrativo/grupos']);
+        this.notificationService.changeMessage('Guardado');
       },
       error: response => {
         // this.hayError = true;
