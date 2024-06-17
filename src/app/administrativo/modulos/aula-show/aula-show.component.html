@@ -31,7 +31,7 @@
                             @if (horario.grupo) {
                                 {{ horario.grupo.nombre + ' - ' + horario.grupo.materia.name }}
                             } @else{
-                                <button class="btn btn-primary">
+                                <button [routerLink]="['/administrativo/grupos', horario.id]" class="btn btn-info m-1">
                                     Asignar
                                 </button>
                             }

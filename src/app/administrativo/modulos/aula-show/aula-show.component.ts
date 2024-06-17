@@ -1,11 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ModuloService } from '../../../core/services/modulo/modulo.service';
 
 @Component({
   selector: 'app-aula-show',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './aula-show.component.html',
   styleUrls: ['./aula-show.component.css']
 })

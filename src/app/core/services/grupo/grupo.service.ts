@@ -19,4 +19,8 @@ export class GrupoService {
     return this.http.post(`${this.apiUrl}grupo/store`, grupo);
   }
 
+  asignarHorarioAula(grupoHorario: any){
+    return this.http.post(`${this.apiUrl}grupo/asignargrupo`, grupoHorario);
+  }
+
 }

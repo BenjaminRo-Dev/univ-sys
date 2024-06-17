@@ -15,6 +15,7 @@
                     <th>Materia</th>
                     <th>Docente</th>
                     <th>Horario</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,13 +26,17 @@
                         <td>{{grupo.periodo}}</td>
                         <td>{{grupo.materia.name}}</td>
                         <td>{{grupo.user.username}}</td>
-                        <!-- <td>{{grupo.horario}}</td> -->
                         <td>
                             @for(horario of grupo.horarios; track horario.id){
                                 <small> {{horario.dia}} {{horario.inicio}}-{{ horario.fin }}</small>
                                 <small> {{ horario.aula.modulo.numero }}-{{ horario.aula.numero }}</small>
                                 <br>
                             }
+                        </td>
+                        <td>
+                            <button class="btn btn-info" [routerLink]="['/administrativo/modulos']" routerLinkActive="activado">
+                                Asignar horario
+                            </button>
                         </td>
                     </tr>
                 }

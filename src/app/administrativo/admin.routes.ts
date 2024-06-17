@@ -15,6 +15,7 @@ import { PerfilComponent } from '../auth/perfil/perfil.component';
 import { GruposIndexComponent } from './grupos/grupos-index/grupos-index.component';
 import { GruposCreateComponent } from './grupos/grupos-create/grupos-create.component';
 import { AulaShowComponent } from './modulos/aula-show/aula-show.component';
+import { GrupoHorarioFormComponent } from './grupos/grupo-horario-form/grupo-horario-form.component';
 
 export const ADMIN_ROUTES: Routes = [
     {
@@ -41,6 +42,7 @@ export const ADMIN_ROUTES: Routes = [
 
             { path: 'grupos', component: GruposIndexComponent},
             { path: 'grupos/create', component: GruposCreateComponent},
+            { path: 'grupos/:horarioId', component: GrupoHorarioFormComponent},
             
             
         ]
