@@ -1,1 +1,38 @@
-<p>horario works!</p>
+<div class="container p-5">
+    <div class="card p-5">
+        <div class="card-body row justify-content-md-center">
+            <img src="assets/uagrm.png" alt="UnivSys" class="col-md-2 col-sm-2 rounded mx-auto d-block">
+            <h1 class="text-center">Mi cronograma</h1>
+            <p class="text-center"></p>
+            
+            <table class="table table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Dia</th>
+                    <th>Materia</th>
+                    <th>Aula</th>
+                    <th>Horario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for(horario of horarios; track horario.id){
+                    <tr>
+                      <td>{{horario.dia}}</td>
+                      <td>
+                        {{ horario.grupo.nombre }}
+                        <small>{{ horario.grupo.materia.name }}</small>
+                      </td>
+                      <td>{{ horario.aula.modulo.numero}} - {{ horario.aula.numero }}</td>
+                      <td>{{horario.inicio}} <br>
+                        <small>{{ horario.fin }}</small>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+              
+
+
+        </div>
+    </div>
+</div>
