@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CronogramaService } from '../../core/services/cronograma/cronograma.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-horario',
@@ -66,4 +68,16 @@ export class HorarioComponent {
 
     return combinedHorarios;
   }
+
+  fileName = 'MiHorario.xlsx';
+  exportarExcel(): void {
+
+    let data = document.getElementById("tabla-cronograma");
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(data);
+
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Horarios');
+    XLSX.writeFile(wb, this.fileName);
+  }
+
 }

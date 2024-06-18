@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { GrupoService } from '../../../core/services/grupo/grupo.service';
 import { RouterLink } from '@angular/router';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-grupos-index',
@@ -53,6 +54,20 @@ export class GruposIndexComponent {
 
     return combinedHorarios;
   }
+
+  fileName = 'MaestroOferta.xlsx';
+  exportarExcel(): void {
+
+    let data = document.getElementById("tabla-grupos");
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(data);
+
+    // const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.grupos);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Grupos');
+    XLSX.writeFile(wb, this.fileName);
+  }
+
+
 }
 
 

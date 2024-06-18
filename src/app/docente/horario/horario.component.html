@@ -1,17 +1,25 @@
 <div class="container p-5">
     <div class="card p-5">
         <div class="card-body row justify-content-md-center">
-            <img src="assets/uagrm.png" alt="UnivSys" class="col-md-2 col-sm-2 rounded mx-auto d-block">
+          <div class="text-end">
+            <button (click)="exportarExcel()"
+                class="m-2 btn btn-secondary">
+                Descargar Excel
+            </button>
+          </div>
+            <img src="assets/uagrm.png" alt="UnivSys" class="col-md-2 col-sm-4 rounded mx-auto d-block">
             <h1 class="text-center">Mi cronograma</h1>
             <p class="text-center"></p>
             
-            <table class="table table-hover table-striped">
+            <div class="table-responsive">
+              <table class="table table-hover table-striped" id="tabla-cronograma">
                 <thead>
                   <tr>
                     <th>Dia</th>
                     <th>Materia</th>
                     <th>Aula</th>
                     <th>Horario</th>
+                    <th>Salida</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -19,17 +27,17 @@
                     <tr>
                       <td>{{horario.dia}}</td>
                       <td>
-                        {{ horario.grupo.nombre }}
-                        <small>{{ horario.grupo.materia.name }}</small>
+                        {{ horario.grupo.nombre }} - {{ horario.grupo.materia.name }}
                       </td>
                       <td>{{ horario.aula.modulo.numero}} - {{ horario.aula.numero }}</td>
-                      <td>{{horario.inicio}} <br>
-                        <small>{{ horario.fin }}</small>
+                      <td>{{horario.inicio}}
                       </td>
+                      <td>{{ horario.fin }}</td>
                     </tr>
                   }
                 </tbody>
               </table>
+            </div>
               
 
 
