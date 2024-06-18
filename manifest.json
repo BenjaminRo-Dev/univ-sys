@@ -1,7 +1,7 @@
 {
     "short_name": "UnivSys",
     "name": "UnivSys",
-    "start_url": "/",
+    "start_url": "index.html",
     "background_color": "#3498db",
     "theme_color": "#3498db",
     "display": "standalone",
