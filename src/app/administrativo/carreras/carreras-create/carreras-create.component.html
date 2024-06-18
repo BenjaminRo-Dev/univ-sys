@@ -1,1 +1,38 @@
-<p>carreras-create works!</p>
+<div class="container p-5">
+    <div class="card p-5">
+        <div class="card-body row justify-content-md-center">
+            <h1 class="text-center">Registrar nueva carrera</h1>
+
+            <div class="row justify-content-center" >
+                @if (hayError) {
+                    <div class="alert alert-danger" >
+                        <ul>
+                            Error en los campos, revise e intentelo de nuevo.
+                        </ul>
+                    </div>
+                }
+            </div>
+
+            <form [formGroup]="form" (ngSubmit)="create()">
+
+                <label>Nombre *</label>
+                <input formControlName="name" id="name" type="text" class="form-control" placeholder="Nombre de la carrera">
+                <label>Sigla *</label>
+                <input formControlName="sigla" id="sigla" type="sigls" class="form-control" placeholder="EJ: INF-123">
+
+                <label>Selecciona una facultad *</label>
+                <select id="facultad" formControlName="facultad" class="form-select">
+                    @for (facultad of facultades; track facultad.id) {
+                        <option value="{{facultad.id}}">{{facultad.name}}</option>
+                    }
+                </select>
+
+                <button class="mt-2 btn btn-primary">
+                    Guardar
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>

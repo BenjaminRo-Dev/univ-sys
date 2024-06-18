@@ -11,7 +11,7 @@
             <a class="nav-link" routerLink="horario" routerLinkActive="activado">Horario</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="asistencia" routerLinkActive="activado">Asistencia</a>
+            <a class="nav-link" [routerLink]="['/docente/asistencia/', user.id]" routerLinkActive="activado">Asistencia</a>
           </li>
           
         </ul>

@@ -1,1 +1,30 @@
-<p>asistencia works!</p>
+<div class="card p-3">
+    <h2>Carreras</h2>
+    <div class="text-end">
+        <button class="btn btn-primary" routerLink="create">
+            Crear
+        </button>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Horario</th>
+                    <th>Aula</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(asistencia of asistencias; track asistencia.id){
+                    <tr>
+                        <td>{{asistencia.fecha}}</td>
+                        <td>{{asistencia.horario.inicio}}</td>
+                        <td>{{asistencia.horario.grupo.nombre}} - {{asistencia.horario.grupo.materia.name}}</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

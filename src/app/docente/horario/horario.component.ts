@@ -27,7 +27,7 @@ export class HorarioComponent {
       this.cronogramaService.getHorarioById(parseInt(this.usuarioLocal.id))
         .subscribe((response: any) => {
           this.horarios = this.combineConsecutiveHorarios(response.horarios);
-          console.log(this.horarios);
+          // console.log(this.horarios);
         });
     } else {
       localStorage.removeItem('user');

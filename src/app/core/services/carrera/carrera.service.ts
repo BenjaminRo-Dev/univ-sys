@@ -19,13 +19,9 @@ export class CarreraService {
     return this.http.get(`${this.apiUrl}carrera/${sigla}`);
   }
 
-  // getCarreraById(id: number) {
-  //   return this.http.get(`https://jsonplaceholder.typicode.com/carreras/${id}`);
-  // }
-
-  // createCarrera(carrera: any) {
-  //   return this.http.post('https://jsonplaceholder.typicode.com/carreras', carrera);
-  // }
+  storeCarrera(carrera: any) {
+    return this.http.post(`${this.apiUrl}carrera/store`, carrera);
+  }
 
   // updateCarrera(carrera: any) {
   //   return this.http.put(`https://jsonplaceholder.typicode.com/carreras/${carrera.id}`, carrera);

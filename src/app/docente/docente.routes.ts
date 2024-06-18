@@ -10,7 +10,7 @@ export const DOCENTE_ROUTES: Routes = [
             { path: '', component: InicioComponent },
             { path: 'inicio', component: InicioComponent },
             { path: 'horario', component: HorarioComponent },
-            { path: 'asistencia', component: AsistenciaComponent },
+            { path: 'asistencia/:userId', component: AsistenciaComponent },
         ]
     }
 ];
