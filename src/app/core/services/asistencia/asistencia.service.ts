@@ -16,5 +16,9 @@ export class AsistenciaService {
     return this.http.get(`${this.apiUrl}asistencia/docente/${userId}`);
   }
 
+  storeAsistencia(asistencia: any) {
+    return this.http.post(`${this.apiUrl}asistencia/store`, asistencia);
+  }
+
 
 }
